@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.tubiao{
+ position:fixed;
+ background-color: #eee;
+ width: 750rpx;
+ height: 80rpx;
+ border-bottom:1px solid #FFF5EE;
+ margin-top: -80rpx;
+ display: flex;
+}
+
+
+.input {
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 1px solid #ddd;
+    padding-left: 5vh;
+    padding-right: 3vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}

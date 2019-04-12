@@ -1,0 +1,66 @@
+/* pages/detial/detial.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.journey-container{
+    position: fixed;
+    right: 230rpx;
+    bottom: 60rpx;
+    border: 1px solid #405f80;
+    width: 300rpx;
+    height: 80rpx;
+    border-radius: 5px;
+    text-align:center;
+}
+
+.journey{
+    font-size:32rpx;
+    font-weight: bold;
+    line-height:80rpx;
+    color: #405f80;
+}
+.title{
+  width: 100%;
+  height: 100rpx;
+    border-bottom: 1rpx solid;
+  border-radius: 10rpx;
+    border-color:#cfcfcf;
+    padding-left:100rpx;
+    padding-top:15rpx; 
+    line-height: 70rpx;
+
+}
+.top{
+width: 100%;
+padding-left:120rpx;
+background-color: #405f80;
+}
+.mid{
+   width:600rpx;
+  padding: 75rpx;
+  height:200rpx;
+ 
+}
+.image{
+  width:600rpx;
+  padding: 75rpx;
+
+ height:800rpx;
+ 
+
+ 
+
+}
+.text_date{
+
+  font-size: 30rpx;
+}
+.text_title{
+  font-size: 70rpx; 
+}
+.text_mid{
+  font-size: 40rpx;
+ text-align: left;
+ text-indent :80rpx;
+}

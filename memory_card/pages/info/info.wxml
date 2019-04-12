@@ -1,0 +1,24 @@
+<!--pages/user/user.wxml-->
+<view class='info'>
+<view class='head'>
+<open-data  class='usepic' type="userAvatarUrl"></open-data>
+
+
+</view>
+
+<view class='wc'>
+<text> 昵称：</text>
+
+<open-data type="userNickName">
+</open-data>
+
+</view>
+ <view class="wc">
+                <text>其他</text>
+            </view>
+            <view class="wc">
+                <text>其他</text>
+            </view>
+        
+
+</view>

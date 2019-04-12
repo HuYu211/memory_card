@@ -1,0 +1,27 @@
+<!--pages/detial/detial.wxml-->
+<view clss="container">
+<view class="top"> 
+<text class="text_date">日期&nbsp工具什么的</text>
+</view>
+<view class="title">
+<text class="text_title" style="color:#405f80">{{name}}</text>
+</view>
+<view class="mid">
+<text class="text_mid" style="color:#405f90" decode="{{true}}" >&emsp;&emsp;{{comment}}</text>
+</view>
+
+<view class='image'> 
+<image src="{{imagePath}}" style='width:600rpx; '></image>
+</view>
+
+<view 
+class="journey-container" bindtap="onTap">
+        <text class="journey">我已复习</text>
+    </view>
+
+
+
+
+
+
+</view>

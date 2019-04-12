@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/post/post",
+        "pages/detial/detial",
+   
+    "pages/welcome/welcome",
+    "pages/test/test",
+    "pages/info/info",
+    "pages/richtest/richtest"
+
+  ],
+  "window": {
+    "navigationBarTitleText": "记忆卡片"
+  }
+}
