@@ -41,7 +41,6 @@ def login( ):
         model_member = Member()
         model_member.nickname = nickname
         model_member.sex = sex
-        model_member.IsSign = 0
         model_member.avatar = avatar
         model_member.salt = MemberService.geneSalt()
         model_member.updated_time = model_member.created_time = getCurrentDate()

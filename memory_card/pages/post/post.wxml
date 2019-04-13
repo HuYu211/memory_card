@@ -1,11 +1,8 @@
 <view class="page">
     <!-- 侧边栏内容 -->
     <view class="page-slidebar">
-        <view class="page-content">
-              <view>
-                  <button class=""  open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==true}}"> 请点击登陆 </button>
-              </view>    
-              <view class="wc" wx:if="{{regFlag==false}}">               
+        <view class="page-content">                
+              <view class="wc">               
                 <view class='avatar'>
                   <open-data  type="userAvatarUrl"></open-data>
                 </view>
