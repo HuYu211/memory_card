@@ -1,16 +1,14 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/post/post",
-        "pages/detial/detial",
-   
     "pages/welcome/welcome",
+    "pages/post/post",
     "pages/test/test",
+    "pages/detial/detial",
     "pages/info/info",
     "pages/richtest/richtest"
-
   ],
   "window": {
-    "navigationBarTitleText": "记忆卡片"
+    "navigationBarTitleText": "记忆卡片",
+    "navigationBarTextStyle":  "black"
   }
 }

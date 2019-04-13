@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.5",
 	"appid": "wx77d7fc3ff2569cb6",
-	"projectname": "memory_card",
+	"projectname": "Demo",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

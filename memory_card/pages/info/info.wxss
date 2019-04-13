@@ -9,7 +9,7 @@
 }
 .head{
   width: 750rpx;
-  background-color: #cfcfcf;
+  background-color: #5cadff;
   height: 350rpx;
   
   

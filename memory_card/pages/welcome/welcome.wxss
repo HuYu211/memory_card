@@ -12,7 +12,7 @@
   width: 260rpx;
   height: 260rpx;
   margin: 20rpx;
-  margin-top: 50rpx;
+  margin-top: 150rpx;
   border-radius: 50%;
   border: 2px solid #fff;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
@@ -20,25 +20,27 @@
 }
 
 .motto{
-    margin-top:100rpx;
+    margin-top:60rpx;
     font-size:64rpx;
     font-weight: bold;
 }
 
 .journey-container{
     margin-top: 400rpx;
-    border: 1px solid #405f80;
-    width: 300rpx;
+    box-shadow: 3px 3px 10px rgb(0, 110, 255);
+    border: 1rpx solid rgb(0, 110, 255);
+    width: 600rpx;
     height: 80rpx;
-    border-radius: 5px;
+    border-radius: 3px;
     text-align:center;
+    background-color: rgb(0, 140, 255);
 }
 
 .journey{
     font-size:32rpx;
-    font-weight: bold;
+    
     line-height:80rpx;
-    color: #405f80;
+    color: #fff;
 }
 
 page{

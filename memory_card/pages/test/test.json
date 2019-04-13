@@ -1,3 +1,20 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "rgba(237, 245, 238)",
+  
+  "usingComponents": {
+    "van-button": "/dist/button/index",
+   "i-swipeout": "/distiview/swipeout/index",
+    "i-card": "/distiview/card/index",
+    "i-row":"/distiview/row/index",
+    "i-panel":"/distiview/panel/index",
+    "i-cell-group":"/distiview/cell-group/index",
+    "i-cell": "/distiview/cell/index",
+    "i-button": "/distiview/button/index",
+    "i-icon": "/distiview/icon/index",
+    "i-tab-bar": "/distiview/tab-bar/index",
+    "i-tab-bar-item": "/distiview/tab-bar-item/index"
+  }
+  
+
+ 
 }
