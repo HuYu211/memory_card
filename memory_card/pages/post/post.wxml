@@ -31,9 +31,9 @@
            <view class='card' wx:for="{{weeklyMovieList}}"bindtap='onTap2' data-text-id='{{item.id}}'>
               <i-swipeout  i-class="i-swipeout-demo-item" operateWidth="{{100}}">
                   <view slot="content">
-                        <i-card title="{{item.name}}" extra="{{item.id}}" >
-                           <view slot="content">{{item.comment}}</view>
-                           <view slot="footer">{{item.date}}</view>
+                        <i-card title="{{item.card_name}}" extra="{{item.id}}" >
+                           <view slot="content">{{item.card_comment}}</view>
+                           <view slot="footer">{{item.current_date}}</view>
                         </i-card>
                   </view>
                     <view  bindtap="deleteTap"  slot="button" class="i-swipeout-demo-button">

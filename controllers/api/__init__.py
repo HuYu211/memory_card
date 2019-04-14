@@ -5,6 +5,8 @@ from common.models.Member import Member
 from common.models.Oauth_member_bind import OauthMemberBind
 from common.libs.helper import getCurrentDate
 from common.libs.member.MemberService import MemberService
+from common.models.Card import Card
+import re
 
 
 route_api =Blueprint("api_page",__name__)
@@ -68,6 +70,7 @@ def login( ):
 def checkReg( ):
     resp = {'code':200,'msg':'操作成功~','data':{}}
     req = request.values
+
     code = req['code'] if 'code' in req else ''
     if not code or len(code)<1:
         resp['code'] = -1
@@ -93,4 +96,40 @@ def checkReg( ):
 
     token = "%s#%s"%( MemberService.geneAuthCode( member_info ), member_info.id )
     resp['data'] = { 'token':token }
+    return jsonify(resp)
+
+@route_api.route("/card/index",methods = ["GET","POST"])
+def noteIndex():
+    resp = {'code': 200, 'msg': '操作成功~', 'data': {}}
+    req = request.values
+    app.logger.info(req)
+    id = req['uid'] if 'uid'in req else ''
+    if not id or len(id)<1:
+        resp['code'] = -1
+        resp['msg'] ="需要id"
+        return jsonify(resp)
+
+    card_list = Card.query.filter_by(status=0,member_id=id).order_by(Card.created_time.asc()).all()
+    data_card_list = []
+    data_card_list.append({
+        'id': 0,
+        'card_name': "first_card",
+        'member_id': 3,
+        'card_comment':"记忆曲线4/14次复习",
+        'peview_time':"应在1小时后复习",
+        'current_date':"2019/4/13",
+    })
+    if card_list:
+        for item in card_list:
+            tmp_data = {
+                'id': item.id,
+
+                'card_name': item.card_name,
+                'card_comment':item.study_status,
+                'peview_time':"应在1小时后复习",
+                'current_date':item.created_time
+            }
+            data_card_list.append(tmp_data)
+    resp['data']['card_list'] = data_card_list
+    resp['data']['count'] = Card.query.filter_by(status=0).order_by(Card.id.desc()).count()
     return jsonify(resp)

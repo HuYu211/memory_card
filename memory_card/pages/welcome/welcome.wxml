@@ -6,5 +6,5 @@
     <!-- <view class="journey-container" bindtap="onTap">
         <text class="journey">微信登入</text>
     </view> -->
-    <button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="login" > 登陆自闭 </button>
+    <button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==false}}"> 登陆自闭 </button>
 </view>

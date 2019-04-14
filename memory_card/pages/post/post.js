@@ -9,90 +9,20 @@ var initdata = function (that) {
 }
 var app = new getApp();
 Page({
-
+  
   data: {
     weeklyMovieList: [
       {
-        shows: "",
-        name: "泰坦尼克号",
-        comment: "失去的才是永恒的",
-        id:0,
-        date:"2019/4/13",
-        // imagePath: "/images/titanic.jpg",
-        isHighlyRecommended: false,
+        id: 0,
+        card_name: "first_card",
+        member_id: 3,
+        card_comment: "记忆曲线4/14次复习",
+        peview_time: "应在1小时后复习",
+        current_date: "2019/4/13"
       },
-      {
-        shows: "",
-        name: "这个杀手不太冷",
-        comment: "小萝莉与怪蜀黍纯真灿烂的爱情故事",
-        id:1,
-        date: "2019/4/13",
-        // imagePath: "/images/leon.jpg",
-        isHighlyRecommended: false,
-      },
-      {
-        shows: "",
-        name: "教父",
-        comment: "最精彩的剧本，最真实的黑帮电影。",
-        id:2,
-        date: "2019/4/13",
-        // imagePath: "/images/jf.jpg",
-        isHighlyRecommended: true,
-      },
-      {
-        shows: "",
-        name:"我也2",
-        comment:"3333",
-        id:3,
-        date: "2019/4/13",
-      },
-      {
-        shows: "",
-        name: "我也2",
-        comment: "3333",
-        id: 3,
-        date: "2019/4/13",
-      },
-      {
-        shows: "",
-        name: "我也2",
-        comment: "3333",
-        id: 3,
-        date: "2019/4/13",
-      },
-      {
-        shows: "",
-        name: "我也2",
-        comment: "3333",
-        id: 3,
-        date: "2019/4/13",
-      },
-      {
-        shows: "",
-        name: "我也2",
-        comment: "3333",
-        id: 3,
-        date: "2019/4/13",
-      },
-      {
-        shows: "",
-        name: "我也2",
-        comment: "3333",
-        id: 3,
-        date: "2019/4/13",
-      },
-      {
-        shows: "",
-        name: "我也2",
-        comment: "3333",
-        id: 3,
-        date: "2019/4/13",
-      },
-     
-     
+      
     ],
-    count: 0,
-    score: 61
+    count: 0
   },
 
   // // 点击左上角小图标事件
@@ -177,6 +107,50 @@ Page({
       });
     }
   },
+
+
+
+  onLoad: function () {
+    var that = this;
+    this.getcard();
+    // this.gettoken();
+
+  },
+  getcard: function () {
+        var that = this;
+        var uid = app.getCache("token");
+        var num = uid.indexOf('#');
+        uid = uid.substr(num + 1);
+        wx.request({
+            url: app.buildUrl("/card/index"),
+            header: app.getRequestHeader(),
+            method: 'POST',
+            data: { uid:uid },
+            success: function (res) {
+                var resp = res.data;
+                if (resp.code != 200) {
+                    app.alert({"content": resp.msg});
+                    return;
+                }
+                that.setData({
+                  weeklyMovieList: resp.data.card_list
+                });
+            }
+        });
+    },
+  // gettoken: function () {
+  //   var that = this;
+  //   wx.request({
+  //     url: app.buildUrl("/card/index"),
+  //     header: app.getRequestHeader(),
+  //     method: 'POST',
+  //     data: { token: app.getCache("token") },
+  //     success: function (res) {
+
+  //     }
+  //   });
+  // },
+
   
    
 })

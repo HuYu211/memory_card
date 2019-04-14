@@ -17,6 +17,7 @@ Page({
       title: app.globalData.shopName
     });
     this.checkLogin();
+   
 
   },
   onShow: function () {
@@ -40,6 +41,9 @@ Page({
       }
     });
   },
+
+
+
   checkLogin: function () {
     var that = this;
     wx.login({
@@ -98,6 +102,8 @@ Page({
         })
       }
     })
-  }
+  },
+  
+
   
 })
