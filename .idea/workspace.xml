@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b1e006a-4e00-4342-ab47-650417431773" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/api/member.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory_card/pages/post/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/memory_card/pages/post/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory_card/pages/post/post.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/memory_card/pages/post/post.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory_card/pages/welcome/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/memory_card/pages/welcome/welcome.js" afterDir="false" />
-    </list>
+    <list default="true" id="1b1e006a-4e00-4342-ab47-650417431773" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +17,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/api/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="932">
               <caret line="125" selection-start-line="125" selection-end-line="125" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
@@ -86,7 +78,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="183" />
     <option name="y" value="165" />
     <option name="width" value="1392" />
@@ -105,17 +97,6 @@
             <path>
               <item name="notebook" type="b2602c69:ProjectViewProjectNode" />
               <item name="notebook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="notebook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notebook" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="notebook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notebook" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -194,23 +175,22 @@
       <workItem from="1555169813432" duration="63000" />
       <workItem from="1555170201129" duration="1665000" />
       <workItem from="1555244271688" duration="197000" />
-      <workItem from="1555244475905" duration="10325000" />
+      <workItem from="1555244475905" duration="10520000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24133000" />
+    <option name="totallyTimeSpent" value="24328000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25813448" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25813448" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -350,7 +330,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/api/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
+        <state relative-caret-position="932">
           <caret line="125" selection-start-line="125" selection-end-line="125" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
