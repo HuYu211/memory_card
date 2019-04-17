@@ -48,56 +48,88 @@ Page({
     let that = this;
     that.data.imgIndex = e.currentTarget.id - 0;
   },
+
+
+
+
+
+
+
+
   /**
    * 添加图片
    */
-  addImg: function () {
+  // addImg: function () {
+  //   var that = this;
+  //   //这里考虑到性能，对于图片张数做了限制
+  //   if (that.data.dataList.length >= 100) {//超过四张
+  //     wx.showModal({
+  //       title: '提示',
+  //       content: '最多只能添加四张图片哦',
+  //       confirmText: "我知道了",
+  //       confirmColor: "#ef8383",
+  //       showCancel: false,
+  //       success: function (res) {
+  //         if (res.confirm) {
+  //         } else if (res.cancel) {
+  //         }
+  //       }
+  //     })
+  //   } else {//添加图片
+  //     wx.showActionSheet({
+  //       itemList: ['从相册选择', '拍照'],
+  //       itemColor: '#ef8383',
+  //       success: function (res) {
+  //         var choseType = res.tapIndex == 0 ? "album" : res.tapIndex == 1 ? "camera" : "";
+  //         if (choseType != "") {
+  //           wx.chooseImage({
+  //             sizeType: ['original'],//原图
+  //             sourceType: [choseType],
+  //             count: 1,//每次添加一张
+  //             success: function (res) {
+  //               var info = {
+  //                 pic: res.tempFilePaths[0],//存储本地地址
+  //                 temp: true,//标记是否是临时图片
+  //                 value: '',//存储图片下方相邻的输入框的内容
+  //               }
+  //               that.data.dataList.splice(that.data.imgIndex, 0, info);//方法自行百度
+  //               that.setData({
+  //                 dataList: that.data.dataList,
+  //               })
+  //             }
+  //           })
+  //         }
+  //       },
+  //       fail: function (res) {
+  //         console.log(res.errMsg)
+  //       }
+  //     })
+  //   }
+  // },
+
+  addImg() {
     var that = this;
-    //这里考虑到性能，对于图片张数做了限制
-    if (that.data.dataList.length >= 100) {//超过四张
-      wx.showModal({
-        title: '提示',
-        content: '最多只能添加四张图片哦',
-        confirmText: "我知道了",
-        confirmColor: "#ef8383",
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-          } else if (res.cancel) {
-          }
-        }
-      })
-    } else {//添加图片
-      wx.showActionSheet({
-        itemList: ['从相册选择', '拍照'],
-        itemColor: '#ef8383',
-        success: function (res) {
-          var choseType = res.tapIndex == 0 ? "album" : res.tapIndex == 1 ? "camera" : "";
-          if (choseType != "") {
-            wx.chooseImage({
-              sizeType: ['original'],//原图
-              sourceType: [choseType],
-              count: 1,//每次添加一张
-              success: function (res) {
-                var info = {
-                  pic: res.tempFilePaths[0],//存储本地地址
-                  temp: true,//标记是否是临时图片
-                  value: '',//存储图片下方相邻的输入框的内容
-                }
-                that.data.dataList.splice(that.data.imgIndex, 0, info);//方法自行百度
-                that.setData({
-                  dataList: that.data.dataList,
-                })
-              }
-            })
-          }
-        },
-        fail: function (res) {
-          console.log(res.errMsg)
-        }
-      })
-    }
+    wx.chooseImage({
+      count: 1, // 默认9
+      sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths;
+        upload(that, tempFilePaths);
+      }
+    })
   },
+
+
+
+
+
+
+
+
+
+
   /**
    * 删除图片
    */
@@ -125,6 +157,7 @@ Page({
       }
     })
   },
+
   //失败警告
   do_fail: function (a) {
     wx.showToast({
@@ -176,3 +209,49 @@ Page({
     }
   }
 })
+
+function upload(page, path) {
+  var uid = app.getCache("token");
+  var num = uid.indexOf('#');
+  uid = uid.substr(num + 1);
+  wx.showToast({
+    icon: "loading",
+    title: "正在上传"
+  }),
+    wx.uploadFile({
+    url: app.buildUrl1("/?id="+uid),
+      filePath: path[0],
+      name: 'file',
+      header: { "Content-Type": "multipart/form-data" },
+      formData: {
+        //和服务器约定的token, 一般也可以放在header中
+        'session_token': wx.getStorageSync('session_token')
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.statusCode != 200) {
+          wx.showModal({
+            title: '提示',
+            content: '上传失败',
+            showCancel: false
+          })
+          return;
+        }
+        var data = res.data
+        page.setData({  //上传成功修改显示头像
+          src: path[0]
+        })
+      },
+      fail: function (e) {
+        console.log(e);
+        wx.showModal({
+          title: '提示',
+          content: '上传失败',
+          showCancel: false
+        })
+      },
+      complete: function () {
+        wx.hideToast();  //隐藏Toast
+      }
+    })
+}

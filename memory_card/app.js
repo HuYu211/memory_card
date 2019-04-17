@@ -5,7 +5,8 @@ App({
     userInfo: null,
     version: "1.0",
     shopName: "记忆卡片",
-    domain: "http://127.0.0.1:5000/api"
+    domain: "http://127.0.0.1:5000/api",
+    domain1: "http://127.0.0.1:5000/upload"
   },
   tip: function (params) {
     var that = this;
@@ -67,6 +68,21 @@ App({
     }
     return url + _paraUrl;
   },
+
+
+  buildUrl1: function (path, params) {
+    var url = this.globalData.domain1 + path;
+    var _paraUrl = "";
+    if (params) {
+      _paraUrl = object.keys(params).map(function (k) {
+        return [encodeURIComponent(k), encodeURIComponent(params[k])].join("=")
+      }).join("&")
+      _paraUrl = "?" + _paraUrl;
+    }
+    return url + _paraUrl;
+  },
+
+  
   getCache: function (key) {
     var value = undefined;
     try {
